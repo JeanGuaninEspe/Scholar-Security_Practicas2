@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AcercadeScreen extends StatelessWidget {
   static const salesroute = 'acercade';
 
-  const AcercadeScreen({Key? key}) : super(key: key);
+  const AcercadeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

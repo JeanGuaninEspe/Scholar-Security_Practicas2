@@ -5,7 +5,7 @@ import 'package:flutter_maps_adv/ui/custom_snackbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BtnCurrentLocation extends StatelessWidget {
-  const BtnCurrentLocation({Key? key}) : super(key: key);
+  const BtnCurrentLocation({super.key});
 
   @override
   Widget build(BuildContext context) {

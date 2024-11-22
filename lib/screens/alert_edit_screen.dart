@@ -7,19 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 import 'package:flutter_maps_adv/blocs/publication/publication_bloc.dart';
-import 'package:flutter_maps_adv/global/environment.dart';
-import 'package:flutter_maps_adv/models/reporte.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class AlerEdittScreen extends StatefulWidget {
   static const String routeName = 'reporte_edit_screen';
 
-  const AlerEdittScreen({Key? key}) : super(key: key);
+  const AlerEdittScreen({super.key});
 
   @override
   State<AlerEdittScreen> createState() => _AlerEdittScreenState();
@@ -551,24 +547,20 @@ class _AlerEdittScreenState extends State<AlerEdittScreen> {
     try {
       var pickedFiles = await ImagePicker().pickMultiImage(imageQuality: 75);
 
-      if (pickedFiles != null) {
-        if (pickedFiles.length <= 3 && imagefiles.length <= 3) {
-          imagefiles.addAll(
-              pickedFiles); // Agregar las nuevas imágenes a la lista existente
-          imagePaths.addAll(pickedFiles
-              .map((e) => e.path)); // Agregar las rutas de las nuevas imágenes
+      if (pickedFiles.length <= 3 && imagefiles.length <= 3) {
+        imagefiles.addAll(
+            pickedFiles); // Agregar las nuevas imágenes a la lista existente
+        imagePaths.addAll(pickedFiles
+            .map((e) => e.path)); // Agregar las rutas de las nuevas imágenes
 
-          setState(
-              () {}); // Actualizar el widget para mostrar las imágenes seleccionadas
-        } else {
-          _showDialog();
-        }
-
-        setState(() {});
+        setState(
+            () {}); // Actualizar el widget para mostrar las imágenes seleccionadas
       } else {
-        print("No image is selected.");
+        _showDialog();
       }
-    } catch (e) {
+
+      setState(() {});
+        } catch (e) {
       print("Error while picking file.");
     }
   }

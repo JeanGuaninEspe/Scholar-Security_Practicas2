@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
-import 'package:flutter_maps_adv/helpers/mostrar_alerta.dart';
 
 class EditTelefonoScreen extends StatefulWidget {
   static const String editTelefonoeroute = 'editTelefono';
-  const EditTelefonoScreen({Key? key}) : super(key: key);
+  const EditTelefonoScreen({super.key});
 
   @override
   State<EditTelefonoScreen> createState() => _EditTelefonoScreenState();

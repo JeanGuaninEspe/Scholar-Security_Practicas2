@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BtnReport extends StatelessWidget {
-  const BtnReport({Key? key}) : super(key: key);
+  const BtnReport({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class BtnReport extends StatelessWidget {
 }
 
 class _BtnReport extends StatelessWidget {
-  const _BtnReport({Key? key}) : super(key: key);
+  const _BtnReport();
 
   @override
   Widget build(BuildContext context) {

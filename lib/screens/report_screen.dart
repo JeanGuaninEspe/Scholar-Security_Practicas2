@@ -29,7 +29,7 @@ class ReportScreen extends StatelessWidget {
     'Otro',
   ];
 
-  const ReportScreen({Key? key}) : super(key: key);
+  const ReportScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +63,10 @@ class _CardReport extends StatelessWidget {
   final IconData icon;
 
   const _CardReport({
-    Key? key,
     required this.title,
     required this.subtitle,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

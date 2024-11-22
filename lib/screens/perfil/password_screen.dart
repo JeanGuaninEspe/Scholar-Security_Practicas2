@@ -4,7 +4,7 @@ import 'package:flutter_maps_adv/blocs/blocs.dart';
 
 class PasswordScreen extends StatefulWidget {
   static const String passwordroute = 'password';
-  const PasswordScreen({Key? key}) : super(key: key);
+  const PasswordScreen({super.key});
 
   @override
   State<PasswordScreen> createState() => _PasswordScreenState();

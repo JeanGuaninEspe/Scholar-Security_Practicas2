@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
 import 'package:flutter_maps_adv/helpers/page_route.dart';
-import 'package:flutter_maps_adv/screens/home_screen.dart';
 import 'package:flutter_maps_adv/screens/information_family_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class InformationScreen extends StatefulWidget {
   static const String information = 'information';
-  const InformationScreen({Key? key}) : super(key: key);
+  const InformationScreen({super.key});
 
   @override
   State<InformationScreen> createState() => _InformationScreenState();

@@ -10,18 +10,15 @@ import 'package:flutter_maps_adv/widgets/option_publication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:uni_links/uni_links.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:url_launcher/url_launcher.dart';
 
 class NewsScreen extends StatefulWidget {
   static const String newsroute = 'news';
   final Function onNewPublication;
 
-  const NewsScreen({Key? key, required this.onNewPublication})
-      : super(key: key);
+  const NewsScreen({super.key, required this.onNewPublication});
 
   @override
   State<NewsScreen> createState() => _NewsScreenState();
@@ -189,7 +186,6 @@ class _NewsScreenState extends State<NewsScreen> {
 
 class _ListNews extends StatelessWidget {
   const _ListNews({
-    super.key,
     required this.publicaciones,
     required ScrollController firstController,
     required this.size,

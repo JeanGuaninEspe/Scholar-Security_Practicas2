@@ -229,7 +229,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
             onSubmitted: _handleSubmit,
             onChanged: (texto) {
               setState(() {
-                if (texto.trim().length > 0) {
+                if (texto.trim().isNotEmpty) {
                   _estaEscribiendo = true;
                 } else {
                   _estaEscribiendo = false;
@@ -273,7 +273,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   }
 
   void _handleSubmit(String texto) {
-    if (texto.length == 0) return;
+    if (texto.isEmpty) return;
     _textController.clear();
     _focusNode.requestFocus();
 

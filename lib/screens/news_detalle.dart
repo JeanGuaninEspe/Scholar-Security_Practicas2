@@ -5,25 +5,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
 import 'package:flutter_maps_adv/global/environment.dart';
 import 'package:flutter_maps_adv/helpers/page_route.dart';
-import 'package:flutter_maps_adv/helpers/show_loading_message.dart';
 import 'package:flutter_maps_adv/models/publication.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_maps_adv/screens/alert_edit_screen.dart';
-import 'package:flutter_maps_adv/screens/report_screen.dart';
 import 'package:flutter_maps_adv/widgets/comments.dart';
 import 'package:flutter_maps_adv/widgets/comment_pulbicacion.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 
-import 'package:timezone/timezone.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class DetalleScreen extends StatefulWidget {
   static const String detalleroute = 'detalle';
-  const DetalleScreen({Key? key}) : super(key: key);
+  const DetalleScreen({super.key});
 
   @override
   State<DetalleScreen> createState() => _DetalleScreenState();
@@ -49,8 +45,7 @@ class _DetalleScreenState extends State<DetalleScreen> {
         orElse: () => publicationBloc.state.currentPublicacion!,
       );
 
-      if (matchingPublication != null &&
-          matchingPublication.comentarios != null) {
+      if (matchingPublication.comentarios != null) {
         final commentCount = matchingPublication.comentarios!.length;
         publicationBloc.add(CountCommentEvent(commentCount));
       } else {
@@ -97,7 +92,7 @@ class _DetalleScreenState extends State<DetalleScreen> {
 
     final List<String> comentarios = [
       ...publicationBloc.state.currentPublicacion!.comentarios ?? [],
-      comment.uid!
+      comment.uid
     ];
 
     final newPublicacion = publicationBloc.state.currentPublicacion!.copyWith(
@@ -291,7 +286,7 @@ class _DetalleScreenState extends State<DetalleScreen> {
 
     final List<String> comentarios = [
       ...publicationBloc.state.currentPublicacion!.comentarios ?? [],
-      newComment.uid!
+      newComment.uid
     ]; //agrega el comentario a la lista de comentarios
 
     final publicacion = publicationBloc.state.currentPublicacion!.copyWith(
@@ -319,9 +314,7 @@ class _DetalleScreenState extends State<DetalleScreen> {
 }
 
 class _ListComentario extends StatelessWidget {
-  const _ListComentario({
-    Key? key,
-  }) : super(key: key);
+  const _ListComentario();
 
   @override
   Widget build(BuildContext context) {
@@ -360,8 +353,7 @@ class _ListComentario extends StatelessWidget {
 class _UbicacionDetalle extends StatefulWidget {
   final Publicacion publicacion;
 
-  const _UbicacionDetalle({Key? key, required this.publicacion})
-      : super(key: key);
+  const _UbicacionDetalle({required this.publicacion});
 
   @override
   State<_UbicacionDetalle> createState() => _UbicacionDetalleState();

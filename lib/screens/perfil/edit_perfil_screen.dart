@@ -10,7 +10,7 @@ import 'dart:io';
 
 class EditPerfilScreen extends StatefulWidget {
   static const String editPerfilroute = 'editPerfil';
-  const EditPerfilScreen({Key? key}) : super(key: key);
+  const EditPerfilScreen({super.key});
 
   @override
   State<EditPerfilScreen> createState() => _EditPerfilScreenState();

@@ -18,7 +18,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class AlertScreen extends StatefulWidget {
   static const String routeName = 'reporte';
 
-  const AlertScreen({Key? key}) : super(key: key);
+  const AlertScreen({super.key});
 
   @override
   State<AlertScreen> createState() => _AlertScreenState();
@@ -284,7 +284,7 @@ class _AlertScreenState extends State<AlertScreen> {
 
                         //Lista de imagenes selccinoadas de la galeria
 
-                        imagefiles != null && imagefiles.isNotEmpty
+                        imagefiles.isNotEmpty
                             ? SizedBox(
                                 height: 80,
                                 child: ListView.builder(
@@ -527,24 +527,20 @@ class _AlertScreenState extends State<AlertScreen> {
     try {
       var pickedFiles = await ImagePicker().pickMultiImage(imageQuality: 75);
 
-      if (pickedFiles != null) {
-        if (pickedFiles.length <= 3 && imagefiles.length <= 3) {
-          imagefiles.addAll(
-              pickedFiles); // Agregar las nuevas imágenes a la lista existente
-          imagePaths.addAll(pickedFiles
-              .map((e) => e.path)); // Agregar las rutas de las nuevas imágenes
+      if (pickedFiles.length <= 3 && imagefiles.length <= 3) {
+        imagefiles.addAll(
+            pickedFiles); // Agregar las nuevas imágenes a la lista existente
+        imagePaths.addAll(pickedFiles
+            .map((e) => e.path)); // Agregar las rutas de las nuevas imágenes
 
-          setState(
-              () {}); // Actualizar el widget para mostrar las imágenes seleccionadas
-        } else {
-          _showDialog();
-        }
-
-        setState(() {});
+        setState(
+            () {}); // Actualizar el widget para mostrar las imágenes seleccionadas
       } else {
-        print("No image is selected.");
+        _showDialog();
       }
-    } catch (e) {
+
+      setState(() {});
+        } catch (e) {
       print("Error while picking file.");
     }
   }

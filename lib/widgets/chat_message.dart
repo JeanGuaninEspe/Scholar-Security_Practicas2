@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
-import 'package:flutter_maps_adv/global/environment.dart';
-import 'package:flutter_maps_adv/resources/services/socket_service.dart';
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -17,7 +15,7 @@ class ChatMessage extends StatelessWidget {
   final AnimationController? animationController;
 
   const ChatMessage({
-    Key? key,
+    super.key,
     required this.texto,
     required this.uid,
     required this.nombre,
@@ -25,7 +23,7 @@ class ChatMessage extends StatelessWidget {
     required this.isGoogle,
     this.img,
     this.animationController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +69,7 @@ class ChatMessage extends StatelessWidget {
             //separador
 
             child: Text(
-              this.texto,
+              texto,
               style: const TextStyle(color: Colors.white),
             ),
           ),
@@ -146,7 +144,7 @@ class ChatMessage extends StatelessWidget {
                     //separador
 
                     child: Text(
-                      this.texto,
+                      texto,
                       style: const TextStyle(color: Colors.black87),
                     ),
                   ),

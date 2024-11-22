@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AlertPruebaScreen extends StatelessWidget {
   static const String routName = "AlertaPrueba";
-  const AlertPruebaScreen({Key? key}) : super(key: key);
+  const AlertPruebaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

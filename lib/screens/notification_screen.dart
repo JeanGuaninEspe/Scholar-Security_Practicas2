@@ -9,7 +9,7 @@ class NotificationsScreen extends StatelessWidget {
   static const routeName = 'notifications_screen';
   static const String sos = 'sos';
   static const String mensaje = 'mensaje';
-  const NotificationsScreen({Key? key}) : super(key: key);
+  const NotificationsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

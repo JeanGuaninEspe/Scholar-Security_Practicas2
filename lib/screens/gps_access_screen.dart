@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class GpsAccessScreen extends StatelessWidget {
   static const String routegps = 'gps_access_screen';
-  const GpsAccessScreen({Key? key}) : super(key: key);
+  const GpsAccessScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,7 @@ class GpsAccessScreen extends StatelessWidget {
 }
 
 class _AccessButton extends StatelessWidget {
-  const _AccessButton({
-    Key? key,
-  }) : super(key: key);
+  const _AccessButton();
 
   @override
   Widget build(BuildContext context) {
@@ -72,9 +70,7 @@ class _AccessButton extends StatelessWidget {
 }
 
 class _EnableGpsMessage extends StatelessWidget {
-  const _EnableGpsMessage({
-    Key? key,
-  }) : super(key: key);
+  const _EnableGpsMessage();
 
   @override
   Widget build(BuildContext context) {

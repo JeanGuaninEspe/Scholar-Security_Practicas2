@@ -1,19 +1,15 @@
-import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
-import 'package:flutter_maps_adv/helpers/mostrar_alerta.dart';
 import 'package:flutter_maps_adv/helpers/page_route.dart';
 import 'package:flutter_maps_adv/screens/screens.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class InformationFamily extends StatefulWidget {
   static const String informationFamily = 'information_family';
-  const InformationFamily({Key? key}) : super(key: key);
+  const InformationFamily({super.key});
 
   @override
   State<InformationFamily> createState() => _InformationFamilyState();
@@ -241,9 +237,8 @@ class _InformationFamilyState extends State<InformationFamily> {
 
 class _TextFieldAddTelefono extends StatelessWidget {
   const _TextFieldAddTelefono({
-    Key? key,
     required this.telefonoController,
-  }) : super(key: key);
+  });
 
   final TextEditingController telefonoController;
   @override
@@ -318,10 +313,9 @@ class _TextFieldAddTelefono extends StatelessWidget {
 // ignore: must_be_immutable
 class _ListContact extends StatelessWidget {
   _ListContact({
-    Key? key,
     required this.authService,
     required this.telefonos,
-  }) : super(key: key);
+  });
 
   List<String> telefonos;
   final AuthBloc authService;

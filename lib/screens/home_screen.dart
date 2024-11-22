@@ -10,7 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart'; // Asegúrate de importar los p
 class HomeScreen extends StatefulWidget {
   static const String homeroute = 'home';
 
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

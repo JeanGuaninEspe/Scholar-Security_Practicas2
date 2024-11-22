@@ -6,7 +6,7 @@ import 'package:flutter_maps_adv/global/environment.dart';
 
 class ImageScreen extends StatelessWidget {
   static const routeName = 'image-screen';
-  const ImageScreen({Key? key}) : super(key: key);
+  const ImageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ImageScreen extends StatelessWidget {
 
 class _ImageItem extends StatelessWidget {
   final int index;
-  const _ImageItem({Key? key, required this.index}) : super(key: key);
+  const _ImageItem({required this.index});
 
   @override
   Widget build(BuildContext context) {

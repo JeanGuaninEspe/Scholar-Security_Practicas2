@@ -5,8 +5,8 @@ class CodigoCreateGrupoScreen extends StatelessWidget {
   static const String codigoGruporoute = 'codigoGrupo';
 
   const CodigoCreateGrupoScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class Reporte {
   String tipo;

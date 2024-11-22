@@ -5,7 +5,6 @@ import 'package:flutter_maps_adv/global/environment.dart';
 import 'package:flutter_maps_adv/models/comentarioPerson.dart';
 import 'package:flutter_maps_adv/models/comentarios.dart';
 import 'package:flutter_maps_adv/models/publication.dart';
-import 'package:flutter_maps_adv/widgets/comment_pulbicacion.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:flutter_maps_adv/resources/services/auth_provider.dart';
 import 'package:geolocator/geolocator.dart';
@@ -190,7 +189,7 @@ class PublicacionService {
 
 //router.put("/like2/:id", validarJWT, likePublicacion);
   Future<Publicacion> likePublicacion(String uid) async {
-    final uri = Uri.parse('${Environment.apiUrl}/publicacion/like2/${uid}');
+    final uri = Uri.parse('${Environment.apiUrl}/publicacion/like2/$uid');
 
     final resp = await http.put(
       uri,
@@ -213,7 +212,7 @@ class PublicacionService {
 
   Future<List<Comentario>> getAllComments(String uid) async {
     try {
-      final uri = Uri.parse('${Environment.apiUrl}/comentarios/${uid}');
+      final uri = Uri.parse('${Environment.apiUrl}/comentarios/$uid');
 
       final resp = await http.get(
         uri,
@@ -235,7 +234,7 @@ class PublicacionService {
 
   Future<Comentario> toggleLikeComentario(String uid) async {
     try {
-      final uri = Uri.parse('${Environment.apiUrl}/comentarios/like/${uid}');
+      final uri = Uri.parse('${Environment.apiUrl}/comentarios/like/$uid');
 
       final resp = await http.put(
         uri,
@@ -315,7 +314,7 @@ class PublicacionService {
   Future<bool> marcarPublicacionPendienteTrue(String uid) async {
     try {
       final uri = Uri.parse(
-          '${Environment.apiUrl}/publicacion/marcar-publicacion-pendiente-false/${uid}');
+          '${Environment.apiUrl}/publicacion/marcar-publicacion-pendiente-false/$uid');
       final resp = await http.put(uri,
           headers: {
             'Content-Type': 'application/json',
@@ -338,7 +337,7 @@ class PublicacionService {
 
   Future<bool> deletePublicacion(String uid) async {
     try {
-      final uri = Uri.parse('${Environment.apiUrl}/publicacion/${uid}');
+      final uri = Uri.parse('${Environment.apiUrl}/publicacion/$uid');
       final resp = await http.delete(uri,
           headers: {
             'Content-Type': 'application/json',
@@ -367,7 +366,7 @@ class PublicacionService {
   ) async {
     try {
       final uri = Uri.parse(
-          '${Environment.apiUrl}/publicacion/actualizarDescripcion/${uid}');
+          '${Environment.apiUrl}/publicacion/actualizarDescripcion/$uid');
 
       final resp = await http.put(uri,
           headers: {

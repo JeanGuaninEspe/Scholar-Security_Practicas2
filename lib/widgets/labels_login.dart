@@ -6,8 +6,7 @@ class Labels extends StatelessWidget {
   final String text2;
 
   const Labels(
-      {Key? key, required this.ruta, required this.text, required this.text2})
-      : super(key: key);
+      {super.key, required this.ruta, required this.text, required this.text2});
 
   @override
   Widget build(BuildContext context) {

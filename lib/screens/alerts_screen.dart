@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_maps_adv/widgets/home/table_alertas_comunidad.dart';
 import 'package:flutter_maps_adv/widgets/home/table_alertas_seguridad.dart';
 
 class AlertsScreen extends StatelessWidget {
   static const String routeName = 'alertas';
-  const AlertsScreen({Key? key}) : super(key: key);
+  const AlertsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

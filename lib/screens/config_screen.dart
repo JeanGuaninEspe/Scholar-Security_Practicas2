@@ -6,7 +6,7 @@ import 'package:flutter_maps_adv/screens/screens.dart';
 
 class ConfigScreen extends StatelessWidget {
   static const String configroute = 'config';
-  const ConfigScreen({Key? key}) : super(key: key);
+  const ConfigScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

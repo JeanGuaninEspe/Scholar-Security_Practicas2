@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
 import 'package:flutter_maps_adv/blocs/room/room_bloc.dart';
 import 'package:flutter_maps_adv/helpers/mostrar_alerta.dart';
-import 'package:flutter_maps_adv/screens/screens.dart';
 import 'package:flutter_maps_adv/widgets/boton_login.dart';
 import 'package:flutter_maps_adv/widgets/custom_input.dart';
 import 'package:flutter_maps_adv/widgets/labels_login.dart';
@@ -12,7 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class RecertScreen extends StatelessWidget {
   static const String recertroute = 'recert';
-  const RecertScreen({Key? key}) : super(key: key);
+  const RecertScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +69,7 @@ class RecertScreen extends StatelessWidget {
 }
 
 class _From extends StatefulWidget {
-  const _From({super.key});
+  const _From();
 
   @override
   State<_From> createState() => __FromState();

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -50,10 +49,8 @@ class MapBloc extends Bloc<MapEvent, MapState> {
     */
 
     locationStateSubscription = locationBloc.stream.listen((locationState) {
-      if (locationState != null) {
-        add(UpdateUserPolylineEvent(locationState.myLocationHistory));
-      }
-      //Si no esta siguiendo al usuario no se mueve
+      add(UpdateUserPolylineEvent(locationState.myLocationHistory));
+          //Si no esta siguiendo al usuario no se mueve
       if (!state.isFollowUser) return;
       //Si no tiene ubicacion no se mueve
       if (locationState.lastKnownLocation == null) return;

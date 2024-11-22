@@ -6,7 +6,7 @@ import 'package:flutter_maps_adv/delegates/search_destination_delegate.dart';
 import 'package:flutter_maps_adv/models/search_result.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key}) : super(key: key);
+  const SearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class SearchBar extends StatelessWidget {
 }
 
 class _SearchBarBody extends StatelessWidget {
-  const _SearchBarBody({Key? key}) : super(key: key);
+  const _SearchBarBody();
 
   void onSearchResults(BuildContext context, SearchResult result) {
     final searchBloc = BlocProvider.of<SearchBloc>(context);

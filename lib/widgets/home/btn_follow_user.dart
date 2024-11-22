@@ -4,7 +4,7 @@ import 'package:flutter_maps_adv/blocs/blocs.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BtnFollowUser extends StatelessWidget {
-  const BtnFollowUser({Key? key}) : super(key: key);
+  const BtnFollowUser({super.key});
 
   @override
   Widget build(BuildContext context) {

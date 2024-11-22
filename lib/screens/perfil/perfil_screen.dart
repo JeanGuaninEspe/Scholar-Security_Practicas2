@@ -4,7 +4,7 @@ import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 
 class PerfilScreen extends StatelessWidget {
   static const String salesroute = 'perfil';
-  const PerfilScreen({Key? key}) : super(key: key);
+  const PerfilScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -122,8 +122,7 @@ class PerfilScreen extends StatelessWidget {
 
 class _ListIconName extends StatelessWidget {
   const _ListIconName(
-      {Key? key, required this.icon, required this.name, this.route})
-      : super(key: key);
+      {required this.icon, required this.name, this.route});
   final IconData icon;
   final String name;
   // ignore: prefer_typing_uninitialized_variables

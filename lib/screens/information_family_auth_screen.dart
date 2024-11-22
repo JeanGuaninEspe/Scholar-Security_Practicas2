@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class InformationFamilyAuth extends StatefulWidget {
   static const String informationFamilyAuth = 'information_familyauth';
-  const InformationFamilyAuth({Key? key}) : super(key: key);
+  const InformationFamilyAuth({super.key});
 
   @override
   State<InformationFamilyAuth> createState() => _InformationFamilyAuthState();
@@ -205,9 +204,8 @@ class _InformationFamilyAuthState extends State<InformationFamilyAuth> {
 
 class _TextFieldAddTelefono extends StatelessWidget {
   const _TextFieldAddTelefono({
-    Key? key,
     required this.telefonoController,
-  }) : super(key: key);
+  });
 
   final TextEditingController telefonoController;
   @override
@@ -282,10 +280,9 @@ class _TextFieldAddTelefono extends StatelessWidget {
 // ignore: must_be_immutable
 class _ListContact extends StatelessWidget {
   _ListContact({
-    Key? key,
     required this.authService,
     required this.telefonos,
-  }) : super(key: key);
+  });
 
   List<String> telefonos;
   final AuthBloc authService;

@@ -12,7 +12,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RoomsScreen extends StatelessWidget {
   static const String salasroute = 'salas';
-  const RoomsScreen({Key? key}) : super(key: key);
+  const RoomsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +78,8 @@ class RoomsScreen extends StatelessWidget {
                     },
                     color: Colors.white,
                     textColor: Colors.black87,
-                    child: const Text('Unirse a un grupo'),
-                    elevation: 5, // Aumenta la elevación del botón
+                    elevation: 5,
+                    child: const Text('Unirse a un grupo'), // Aumenta la elevación del botón
                   ),
                   //Material boton para crear un grupo
                   MaterialButton(
@@ -112,8 +112,8 @@ class RoomsScreen extends StatelessWidget {
                           },
                           color: const Color(0xFF7ab466),
                           textColor: Colors.white,
-                          child: const Text('Crear un grupo'),
                           elevation: 5,
+                          child: const Text('Crear un grupo'),
                         ),
                 ],
               ),
@@ -223,7 +223,7 @@ class RoomsScreen extends StatelessWidget {
 
 class SalaListTitle extends StatelessWidget {
   final Sala sala;
-  const SalaListTitle({Key? key, required this.sala}) : super(key: key);
+  const SalaListTitle({super.key, required this.sala});
 
   @override
   Widget build(BuildContext context) {

@@ -9,13 +9,12 @@ import 'package:flutter_maps_adv/screens/auth_screen.dart';
 import 'package:flutter_maps_adv/screens/home_screen.dart';
 import 'package:flutter_maps_adv/screens/information_family_screen.dart';
 import 'package:flutter_maps_adv/screens/information_screen.dart';
-import 'package:flutter_maps_adv/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoadingLoginScreen extends StatelessWidget {
   static const String loadingroute = 'loadingLogin';
 
-  const LoadingLoginScreen({Key? key}) : super(key: key);
+  const LoadingLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

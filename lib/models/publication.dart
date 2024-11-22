@@ -187,7 +187,7 @@ class Publicacion {
       countLikes: countLikes ?? this.countLikes,
       unidadEducativa: unidadEducativa ?? this.unidadEducativa,
       updatedAt: updatedAt ?? this.updatedAt,
-      nombreUsuario: usuarioNombre ?? this.nombreUsuario,
+      nombreUsuario: usuarioNombre ?? nombreUsuario,
     );
   }
 }

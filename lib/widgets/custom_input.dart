@@ -10,7 +10,7 @@ class CustonInput extends StatelessWidget {
   final Widget? suffixIcon;
 
   const CustonInput({
-    Key? key,
+    super.key,
     required this.icon,
     required this.placeholder,
     required this.textController,
@@ -18,7 +18,7 @@ class CustonInput extends StatelessWidget {
     this.isPassword = false,
     this.obscurePassword = true, // Cambiado a true por defecto
     this.suffixIcon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

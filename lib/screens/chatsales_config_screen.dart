@@ -9,7 +9,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class DetalleSalaScreen extends StatelessWidget {
   static const String detalleSalaroute = 'detalleSala';
-  const DetalleSalaScreen({Key? key}) : super(key: key);
+  const DetalleSalaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

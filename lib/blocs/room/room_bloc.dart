@@ -98,7 +98,7 @@ class RoomBloc extends Bloc<RoomEvent, RoomState> {
       return;
     }
     final newSalas = [...state.salas, newSala];
-    emit(state.copyWith(salas: newSalas as List<Sala>, isLoading: false));
+    emit(state.copyWith(salas: newSalas, isLoading: false));
   }
 
   FutureOr<void> _salaJoinEvent(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
 import 'package:flutter_maps_adv/blocs/room/room_bloc.dart';
 import 'package:flutter_maps_adv/helpers/mostrar_alerta.dart';
@@ -13,7 +12,7 @@ import 'package:flutter_maps_adv/widgets/logo_login.dart';
 class LoginScreen extends StatelessWidget {
   static const String loginroute = 'login';
 
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,7 @@ class LoginScreen extends StatelessWidget {
 }
 
 class _From extends StatefulWidget {
-  const _From({super.key});
+  const _From();
 
   @override
   State<_From> createState() => __FromState();

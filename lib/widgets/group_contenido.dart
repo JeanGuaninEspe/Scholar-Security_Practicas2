@@ -21,8 +21,8 @@ class GroupContenido extends StatelessWidget {
     final TextEditingController nomController = TextEditingController();
     final chatProvider = BlocProvider.of<RoomBloc>(context, listen: false);
     final blocRoom = BlocProvider.of<RoomBloc>(context);
-    final FocusNode _focusNode = FocusNode();
-    _focusNode.requestFocus();
+    final FocusNode focusNode = FocusNode();
+    focusNode.requestFocus();
     return Column(
       children: [
         Container(
@@ -38,7 +38,7 @@ class GroupContenido extends StatelessWidget {
           child: TextField(
             textCapitalization: TextCapitalization.sentences,
             cursorColor: Colors.black,
-            focusNode: _focusNode,
+            focusNode: focusNode,
             // textoHint == 000-000'
             //   onChanged: textoHint == '000-000'
             // ? (value) {
@@ -94,7 +94,7 @@ class GroupContenido extends StatelessWidget {
           onPressed: () async {
             if (textoButton == 'Crear Grupo') {
               chatProvider.add(SalaCreateEvent(nomController.text));
-              _focusNode.unfocus();
+              focusNode.unfocus();
               Navigator.pop(context);
             } else {
               final res = await chatProvider.joinSala(nomController.text);
@@ -111,7 +111,7 @@ class GroupContenido extends StatelessWidget {
                     fontSize: 16.0);
                 //CargandoEventFalse
               } else {
-                _focusNode.unfocus();
+                focusNode.unfocus();
                 Fluttertoast.showToast(
                     msg: 'Te uniste al grupo ${nomController.text}',
                     toastLength: Toast.LENGTH_SHORT,

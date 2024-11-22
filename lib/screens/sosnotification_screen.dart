@@ -9,7 +9,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SosNotificationScreen extends StatelessWidget {
   static const String sosroute = 'sos_notification';
-  const SosNotificationScreen({Key? key}) : super(key: key);
+  const SosNotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

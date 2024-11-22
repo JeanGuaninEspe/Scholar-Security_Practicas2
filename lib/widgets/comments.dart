@@ -10,10 +10,10 @@ class LikesCommentsDetails extends StatefulWidget {
   final List<String> likes;
 
   const LikesCommentsDetails({
-    Key? key,
+    super.key,
     required this.publicacion,
     required this.likes,
-  }) : super(key: key);
+  });
 
   @override
   State<LikesCommentsDetails> createState() => _LikesCommentsDetailsState();
@@ -124,7 +124,7 @@ class _LikesCommentsDetailsState extends State<LikesCommentsDetails> {
                     color: Colors.black54,
                   ),
                   const SizedBox(width: 5),
-                  state.comentariosP.length > 0
+                  state.comentariosP.isNotEmpty
                       ? Text(
                           state.comentariosP.length.toString(),
                           style: const TextStyle(

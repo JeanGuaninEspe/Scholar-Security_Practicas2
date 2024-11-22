@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SosScreen extends StatelessWidget {
   static const String sosroute = 'sos';
-  const SosScreen({Key? key}) : super(key: key);
+  const SosScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

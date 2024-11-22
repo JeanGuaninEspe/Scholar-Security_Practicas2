@@ -4,7 +4,7 @@ import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 
 class EditNombreScreen extends StatefulWidget {
   static const String editNombreroute = 'editNombre';
-  const EditNombreScreen({Key? key}) : super(key: key);
+  const EditNombreScreen({super.key});
 
   @override
   State<EditNombreScreen> createState() => _EditNombreScreenState();

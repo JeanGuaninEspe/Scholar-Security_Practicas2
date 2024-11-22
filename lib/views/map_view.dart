@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/blocs.dart';
-import 'package:flutter_maps_adv/blocs/search/search_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapView extends StatefulWidget {
@@ -10,11 +9,10 @@ class MapView extends StatefulWidget {
   final Set<Marker> markers;
 
   const MapView(
-      {Key? key,
+      {super.key,
       required this.initialLocation,
       required this.polylines,
-      required this.markers})
-      : super(key: key);
+      required this.markers});
 
   @override
   _MapViewState createState() => _MapViewState();

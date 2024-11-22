@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,7 @@ import 'package:url_launcher/url_launcher.dart';
 class PlaceDetailScreen extends StatelessWidget {
   static const String place = 'place_details';
 
-  const PlaceDetailScreen({Key? key}) : super(key: key);
+  const PlaceDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,25 +58,13 @@ class PlaceDetailScreen extends StatelessWidget {
               children: [
                 FlutterMap(
                   options: MapOptions(
-                    center: LatLng(ubicacion.latitud, ubicacion.longitud),
-                    zoom: 14.0,
+                    initialCenter: LatLng(ubicacion.latitud, ubicacion.longitud),
+                    initialZoom: 14.0,
                     maxZoom: 21,
                   ),
-                  nonRotatedChildren: [
-                    RichAttributionWidget(
-                      attributions: [
-                        TextSourceAttribution(
-                          'OpenStreetMap contributors',
-                          onTap: () => launchUrl(
-                              Uri.parse('https://openstreetmap.org/copyright')),
-                        ),
-                      ],
-                    ),
-                  ],
                   children: [
                     TileLayer(
-                      urlTemplate:
-                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                      urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: 'com.example.app',
                       maxZoom: 22,
                     ),
@@ -90,8 +77,7 @@ class PlaceDetailScreen extends StatelessWidget {
                           point: LatLng(ubicacion.latitud, ubicacion.longitud),
                           width: 80,
                           height: 80,
-                          //agregar el icono de la ubicacion
-                          builder: (context) => const Icon(
+                          child: const Icon(
                             Icons.location_on,
                             size: 40,
                             color: Color(0xFF7ab466),
@@ -99,7 +85,15 @@ class PlaceDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    //puntero de la ubicacion
+                    RichAttributionWidget(
+                      attributions: [
+                        TextSourceAttribution(
+                          'OpenStreetMap contributors',
+                          onTap: () => launchUrl(
+                              Uri.parse('https://openstreetmap.org/copyright')),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
                 Column(
@@ -119,9 +113,9 @@ class PlaceDetailScreen extends StatelessWidget {
                                 ),
                                 onPressed: () async {
                                   await searchBloc
-                                      .eliminarUbicacion(ubicacion.uid!);
+                                      .eliminarUbicacion(ubicacion.uid);
                                   authBloc.add(
-                                      AuthDeleteUbicacionEvent(ubicacion.uid!));
+                                      AuthDeleteUbicacionEvent(ubicacion.uid));
                                   Navigator.pop(context);
                                 },
                                 icon: const Icon(FontAwesomeIcons.trashAlt,
@@ -144,7 +138,7 @@ class PlaceDetailScreen extends StatelessWidget {
                                     return;
                                   }
                                   searchBloc.add(
-                                      AddUbicacionByUserEvent(ubicacion.uid!));
+                                      AddUbicacionByUserEvent(ubicacion.uid));
                                   authBloc
                                       .add(AuthAddUbicacionEvent(ubicacion));
                                   Navigator.pop(context);

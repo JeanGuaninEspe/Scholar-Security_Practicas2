@@ -7,7 +7,7 @@ import 'package:flutter_maps_adv/screens/map_screen.dart';
 class LoadingMapScreen extends StatelessWidget {
   static const String loadingroute = 'loading';
 
-  const LoadingMapScreen({Key? key}) : super(key: key);
+  const LoadingMapScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

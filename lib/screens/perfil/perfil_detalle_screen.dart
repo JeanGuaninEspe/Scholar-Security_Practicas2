@@ -10,7 +10,7 @@ import 'package:timeago/timeago.dart' as timeago;
 
 class PerfilDetalleScreen extends StatelessWidget {
   static const String perfilDetalleroute = 'perfilDetalle';
-  const PerfilDetalleScreen({Key? key}) : super(key: key);
+  const PerfilDetalleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -113,9 +113,7 @@ class PerfilDetalleScreen extends StatelessWidget {
 }
 
 class _PerfilCicle extends StatelessWidget {
-  const _PerfilCicle({
-    super.key,
-  });
+  const _PerfilCicle();
 
   @override
   Widget build(BuildContext context) {

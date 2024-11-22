@@ -9,7 +9,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ReportDetalleScreen extends StatelessWidget {
   static const String reportDetalleRoute = 'report_detalle';
-  const ReportDetalleScreen({Key? key}) : super(key: key);
+  const ReportDetalleScreen({super.key});
   @override
   Widget build(BuildContext context) {
     Map<String, List<String>> reportSpecifications =
@@ -112,7 +112,7 @@ class ReportDetalleScreen extends StatelessWidget {
 
 class _BtnReport extends StatefulWidget {
   final String args;
-  const _BtnReport({Key? key, required this.args}) : super(key: key);
+  const _BtnReport({required this.args});
 
   @override
   __BtnReportState createState() => __BtnReportState();

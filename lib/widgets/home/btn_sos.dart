@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart'; // Importar el paquete intl
 
 class BtnSOS extends StatelessWidget {
-  const BtnSOS({Key? key}) : super(key: key);
+  const BtnSOS({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +51,10 @@ class PositionedBtnSOS extends StatelessWidget {
 
 class _SOSNotification extends StatefulWidget {
   const _SOSNotification({
-    Key? key,
     required this.authBloc,
     required this.lat,
     required this.lng,
-  }) : super(key: key);
+  });
 
   final AuthBloc authBloc;
   final double lat;
@@ -297,11 +296,10 @@ class _SOSNotificationState extends State<_SOSNotification> {
 
 class _SOSNumber extends StatelessWidget {
   const _SOSNumber({
-    Key? key,
     required this.authBloc,
     required this.lat,
     required this.lng,
-  }) : super(key: key);
+  });
 
   final AuthBloc authBloc;
   final double lat;

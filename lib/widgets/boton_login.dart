@@ -6,16 +6,16 @@ class BotonForm extends StatelessWidget {
   final Function onPressed;
 
   const BotonForm({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Material(
       child: MaterialButton(
-        onPressed: () => this.onPressed(),
+        onPressed: () => onPressed(),
         elevation: 2,
         highlightElevation: 5,
         color: const Color(0xFF7ab466),

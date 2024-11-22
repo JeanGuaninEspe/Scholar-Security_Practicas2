@@ -12,7 +12,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 class MienbrosChatScreen extends StatefulWidget {
   static const String mienbrosChatroute = 'miembrosChat';
 
-  const MienbrosChatScreen({Key? key}) : super(key: key);
+  const MienbrosChatScreen({super.key});
 
   @override
   State<MienbrosChatScreen> createState() => _MienbrosChatScreenState();
@@ -23,7 +23,7 @@ class _MienbrosChatScreenState extends State<MienbrosChatScreen> {
   RoomBloc roomBloc = RoomBloc();
   AuthBloc authBloc = AuthBloc();
 
-  RefreshController _refreshController = RefreshController();
+  final RefreshController _refreshController = RefreshController();
 
   @override
   void initState() {

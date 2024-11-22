@@ -7,13 +7,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class OptionNews extends StatefulWidget {
   const OptionNews({
-    Key? key,
+    super.key,
     required this.publicaciones,
     required this.state,
     required this.usuarioBloc,
     required this.i,
     required this.likes,
-  }) : super(key: key);
+  });
 
   final List<Publicacion> publicaciones;
   final PublicationState state;

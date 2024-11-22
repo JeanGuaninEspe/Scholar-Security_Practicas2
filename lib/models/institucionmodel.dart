@@ -21,24 +21,29 @@ class InstitucionReponse {
     required this.instituciones,
   });
 
-  factory InstitucionReponse.fromJson(Map<String, dynamic> json) =>
-      InstitucionReponse(
-        ok: json["ok"],
-        msg: json["msg"],
-        instituciones: List<Institucione>.from(
-            json["instituciones"].map((x) => Institucione.fromJson(x))),
-      );
+  factory InstitucionReponse.fromJson(Map<String, dynamic> json) {
+    return InstitucionReponse(
+      ok: json['ok'],
+      msg: json['msg'],
+      instituciones: List<Institucione>.from(
+        json['instituciones'].map((x) => Institucione.fromJson(x)),
+      ),
+    );
+  }
 
-  Map<String, dynamic> toJson() => {
-        "ok": ok,
-        "msg": msg,
-        "instituciones":
-            List<dynamic>.from(instituciones.map((x) => x.toJson())),
-      };
+  Map<String, dynamic> toJson() {
+    return {
+      'ok': ok,
+      'msg': msg,
+      'instituciones': List<dynamic>.from(
+        instituciones.map((x) => x.toJson()),
+      ),
+    };
+  }
 }
 
 class Institucione {
-  String id;
+  String? id;
   String nombre;
   String direccion;
   String tipo;
@@ -46,7 +51,7 @@ class Institucione {
   int v;
 
   Institucione({
-    required this.id,
+    this.id,
     required this.nombre,
     required this.direccion,
     required this.tipo,
@@ -55,40 +60,24 @@ class Institucione {
   });
 
   factory Institucione.fromJson(Map<String, dynamic> json) {
-    try {
-      return Institucione(
-        id: json["_id"],
-        nombre: json["nombre"],
-        direccion: json["direccion"],
-        tipo: json["tipo"],
-        descripcion: json["descripcion"],
-        v: json["__v"],
-      );
-    } catch (e) {
-      // Manejar errores aquí
-      print("Error al analizar el JSON en Institucione.fromJson: $e");
-
-      // Identificar el campo problemático
-      if (e is FormatException) {
-        final fieldWithError = e.source;
-        print("Campo problemático: $fieldWithError");
-      }
-
-      return Institucione(
-          id: "",
-          nombre: "",
-          direccion: "",
-          tipo: "",
-          v: 1); // Devolver un objeto vacío o null en caso de error, o lanzar una excepción si es necesario.
-    }
+    return Institucione(
+      id: json['_id'],
+      nombre: json['nombre'],
+      direccion: json['direccion'],
+      tipo: json['tipo'],
+      descripcion: json['descripcion'],
+      v: json['__v'],
+    );
   }
 
-  Map<String, dynamic> toJson() => {
-        "_id": id,
-        "nombre": nombre,
-        "direccion": direccion,
-        "tipo": tipo,
-        "descripcion": descripcion,
-        "__v": v,
-      };
+  Map<String, dynamic> toJson() {
+    return {
+      '_id': id,
+      'nombre': nombre,
+      'direccion': direccion,
+      'tipo': tipo,
+      'descripcion': descripcion,
+      '__v': v,
+    };
+  }
 }

@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps_adv/blocs/auth/auth_bloc.dart';
 import 'package:flutter_maps_adv/helpers/mostrar_alerta.dart';
-import 'package:flutter_maps_adv/models/institucionmodel.dart';
 import 'package:flutter_maps_adv/screens/screens.dart';
 import 'package:flutter_maps_adv/widgets/boton_login.dart';
 import 'package:flutter_maps_adv/widgets/custom_input.dart';
 import 'package:flutter_maps_adv/widgets/labels_login.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 
 class RegisterScreen extends StatelessWidget {
   static const String registerroute = 'register';
 
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +53,7 @@ class RegisterScreen extends StatelessWidget {
 }
 
 class _From extends StatefulWidget {
-  const _From({super.key});
+  const _From();
 
   @override
   State<_From> createState() => __FromState();
@@ -73,22 +71,28 @@ class __FromState extends State<_From> {
 
   @override
   void initState() {
-    authServiceBloc = BlocProvider.of<AuthBloc>(context, listen: false);
-
-    for (Institucione institucion in authServiceBloc.instituciones) {
-      dropdownItems.add(
-        DropdownMenuItem(
-          value: institucion.nombre,
-          child: Text(institucion.nombre,
-              style: const TextStyle(color: Colors.black54)),
-        ),
-      );
-    }
     super.initState();
+    authServiceBloc = BlocProvider.of<AuthBloc>(context, listen: false);
+    _loadInstituciones();
+  }
+
+  Future<void> _loadInstituciones() async {
+    final institucionesList = await authServiceBloc.obtenerTodasLasInstituciones();
+    setState(() {
+      dropdownItems = institucionesList.map((institucion) {
+        return DropdownMenuItem<String>(
+          value: institucion.nombre,
+          child: Text(institucion.nombre, style: const TextStyle(color: Colors.black54)),
+        );
+      }).toList();
+    });
   }
 
   @override
   void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    nomController.dispose();
     super.dispose();
   }
 

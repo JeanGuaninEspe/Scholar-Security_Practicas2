@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ReportFinishScreen extends StatelessWidget {
   static const String routeName = 'report_finish';
 
-  const ReportFinishScreen({Key? key}) : super(key: key);
+  const ReportFinishScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class ReportFinishScreen extends StatelessWidget {
 }
 
 class _BtnReport extends StatelessWidget {
-  const _BtnReport({Key? key}) : super(key: key);
+  const _BtnReport();
 
   @override
   Widget build(BuildContext context) {
