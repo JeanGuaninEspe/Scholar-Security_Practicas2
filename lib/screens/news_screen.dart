@@ -17,6 +17,7 @@ import 'package:timeago/timeago.dart' as timeago;
 class NewsScreen extends StatefulWidget {
   static const String newsroute = 'news';
   final Function onNewPublication;
+static const extensionesValidas = ["png", "jpg", "jpeg", "gif"];
 
   const NewsScreen({super.key, required this.onNewPublication});
 
@@ -250,21 +251,15 @@ class _ListNews extends StatelessWidget {
                                           "0xFF${publicaciones[i].color}")), //Color(0xffFDCF09
                                       child: Padding(
                                         padding: const EdgeInsets.all(5.0),
-
-                                        //si ternmina despues del punto en .png muestra la imagen
-                                        child: publicaciones[i]
-                                                .imgAlerta
-                                                .endsWith('.png')
+                                        child: NewsScreen.extensionesValidas.any((ext) => publicaciones[i].imgAlerta.endsWith('.$ext'))
                                             ? Image.asset(
-                                                'assets/alertas/${publicaciones[i].imgAlerta}',
-                                                // ignore: deprecated_member_use
-                                                color: Colors.white,
-                                              )
+                                          'assets/alertas/${publicaciones[i].imgAlerta}',
+                                          color: Colors.white,
+                                        )
                                             : SvgPicture.asset(
-                                                'assets/iconvinculacion/${publicaciones[i].imgAlerta}',
-                                                // ignore: deprecated_member_use
-                                                color: Colors.white,
-                                              ),
+                                          'assets/iconvinculacion/${publicaciones[i].imgAlerta}',
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -338,7 +333,7 @@ class _ListNews extends StatelessWidget {
                                           Radius.circular(9.0),
                                         ),
                                         child: _buildCachedImage(
-                                          "${Environment.apiUrl}/uploads/publicaciones/${publicaciones[i].uid!}?imagenIndex=${publicaciones[i].imagenes!.first}",
+                                          publicaciones[i].imagenes![0], // Asegúrate de que `imagenes` contenga la URL de Cloudinary
                                           double.infinity,
                                           size.height * 0.35,
                                         ),

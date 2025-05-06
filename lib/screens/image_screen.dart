@@ -47,7 +47,7 @@ class _ImageItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Image.network(
-            "${Environment.apiUrl}/uploads/publicaciones/${publicactionBloc.state.currentPublicacion!.uid!}?imagenIndex=${publicactionBloc.state.currentPublicacion!.imagenes![index]}",
+            publicactionBloc.state.currentPublicacion!.imagenes![index], // Asegúrate de que `imagenes` contenga la URL de Cloudinary
             fit: BoxFit.cover,
           ),
         ),

@@ -1004,7 +1004,7 @@ class _CustonAppBarDetalle extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Image.network(
-                          "${Environment.apiUrl}/uploads/publicaciones/${publicacion.uid!}?imagenIndex=${publicacion.imagenes![index]}",
+                          publicacion.imagenes![index],
                           fit: BoxFit.cover,
                         ),
                       ),

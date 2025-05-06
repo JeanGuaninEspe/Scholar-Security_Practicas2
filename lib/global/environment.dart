@@ -15,6 +15,15 @@ class Environment {
       ? 'https://backend-pract2.onrender.com/api/v2'
       : 'http://10.3.1.203:3000/api/v2';
   static String socketUrl = Platform.isAndroid
-      ? 'http://10.3.1.203:3000'
+      ? 'https://backend-pract2.onrender.com/api/v2'
       : 'http://localhost:3000';
 }
+
+/*class Environment {
+  static String apiUrl = Platform.isAndroid
+      ? 'http://192.168.1.10:3000/api/v2'
+      : 'http://10.3.1.203:3000/api/v2';
+  static String socketUrl = Platform.isAndroid
+      ? 'http://192.168.1.10:3000/api/v2'
+      : 'http://localhost:3000';
+}*/
